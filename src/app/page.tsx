@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { FeaturesSection } from "@/components/section/home-page/features-sec";
 import { SolutionSection } from "@/components/section/home-page/solution-section";
+import { FooterSection } from "@/components/section/footer";
 
 export default function Home() {
   return (
@@ -127,6 +128,9 @@ export default function Home() {
 
       {/* Our Solution Section */}
       <SolutionSection />
+
+      {/* Footer Section */}
+      <FooterSection />
     </main>
   );
 }

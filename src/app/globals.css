@@ -44,7 +44,9 @@
 
   /* Linkrow custom color tokens for Tailwind */
   --color-linkrow-badge-bg: var(--linkrow-badge-bg);
+  --color-linkrow-badge2-bg: var(--linkrow-badge2-bg);
   --color-linkrow-badge-text: var(--linkrow-badge-text);
+  --color-linkrow-badge2-text: var(--linkrow-badge2-text);
   --color-linkrow-primary-text: var(--linkrow-primary-text);
   --color-linkrow-secondary-bg: var(--linkrow-secondary-bg);
   --color-linkrow-accent-green: var(--linkrow-accent-green);
@@ -88,8 +90,10 @@
   --sidebar-ring: oklch(0.708 0 0);
   
     /* Custom Linkrow brand colors */
-  --linkrow-badge-bg: #eaeaea;
+  --linkrow-badge-bg: #eaeae2;
+  --linkrow-badge2-bg: #35625d;
   --linkrow-badge-text: #777272;
+  --linkrow-badge2-text: #aeda94;
   --linkrow-primary-text: #1f514c;
   --linkrow-secondary-bg: #fffffb;
   --linkrow-accent-green: #aeda94;

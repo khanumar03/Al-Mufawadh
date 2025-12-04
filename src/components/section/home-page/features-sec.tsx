@@ -2,6 +2,7 @@ import { ArrowRight, ShieldCheck, List, Lock, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "../../ui/badge"
 import Link from "next/link"
+import Image from "next/image"
 
 export function FeaturesSection() {
   return (
@@ -12,24 +13,21 @@ export function FeaturesSection() {
             {/* <BadgePill className="mb-6 inline-flex">About us</BadgePill> */}
             <Badge
               asChild
-              className="text-linkrow-badge-text bg-linkrow-badge-bg"
+              className="text-linkrow-primary-text bg-linkrow-badge-bg"
             >
               <Link href="#">About Us</Link>
             </Badge>
-            <h2 className="mx-auto mb-6 max-w-4xl text-4xl font-medium leading-tight tracking-tight text-foreground lg:text-5xl">
-              Platform designed to simplify{" "}
-              <span className="text-primary">
-                and enhance the hiring process.
-              </span>
+            <h2 className="mx-auto mb-6 max-w-4xl text-4xl text-linkrow-primary-text font-medium leading-tight tracking-tight lg:text-5xl">
+              Platform designed to simplify and enhance the hiring process.
             </h2>
-            <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-linkrow-badge-text">
               With personalized solutions tailored to your business needs, we
               connect you with the best talent quickly and efficiently, helping
               you build stronger, more effective teams.
             </p>
             <Button
               size="lg"
-              className="rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90"
+              className="rounded-full bg-linkrow-primary-text px-8 text-linkrow-secondary-bg"
             >
               About Linkrow
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -163,56 +161,80 @@ export function FeaturesSection() {
             <div className="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 place-items-center">
               {/* Top Left - Tailored Solutions */}
               <div
-                className="feature-card-animate-left w-full sm:w-80 h-60 rounded-2xl bg-white p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
+                className="feature-card-animate-left w-full sm:w-80 h-60 rounded-2xl bg-linkrow-secondary-bg p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
                 style={{ animation: "fadeInLeft 0.8s ease-out forwards", opacity: 0 }}
               >
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-                  <ShieldCheck className="h-6 w-6 text-primary-foreground" />
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linkrow-primary-text">
+                  {/* <ShieldCheck className="h-6 w-6 text-primary" /> */}
+                  <Image 
+                  src="/icons/home_feature_frame-1.svg"
+                  alt="Tailored Solutions"
+                  width={24}
+                  height={24}
+                  />
                 </div>
-                <h3 className="mb-2.5 text-xl font-semibold text-foreground">Tailored Solutions</h3>
-                <p className="leading-relaxed text-muted-foreground">
+                <h3 className="mb-2.5 text-xl font-semibold text-linkrow-primary-text">Tailored Solutions</h3>
+                <p className="leading-relaxed text-linkrow-badge-text">
                   Custom recruitment strategies designed for your unique business needs.
                 </p>
               </div>
 
               {/* Top Right - Access to Top Talent */}
               <div
-                className="feature-card-animate-right w-full sm:w-80 h-60 rounded-2xl bg-white p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
+                className="feature-card-animate-right w-full sm:w-80 h-60 rounded-2xl bg-linkrow-secondary-bg p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
                 style={{ animation: "fadeInRight 0.8s ease-out forwards", animationDelay: "0.2s", opacity: 0 }}
               >
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-                  <List className="h-6 w-6 text-primary-foreground" />
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linkrow-primary-text">
+                  {/* <List className="h-6 w-6 text-linkrow-secondary-bg" /> */}
+                  <Image 
+                  src="/icons/home_feature_frame-2.svg"
+                  alt="Access to Top Talent"
+                  width={24}
+                  height={24}
+                  />
                 </div>
-                <h3 className="mb-2.5 text-xl font-semibold text-foreground">Access to Top Talent</h3>
-                <p className="leading-relaxed text-muted-foreground">
+                <h3 className="mb-2.5 text-xl font-semibold text-linkrow-primary-text">Access to Top Talent</h3>
+                <p className="leading-relaxed text-linkrow-badge-text">
                   Connect with highly qualified candidates across industries.
                 </p>
               </div>
 
               {/* Bottom Left - Faster Hiring */}
               <div
-                className="feature-card-animate-left w-full sm:w-80 h-60 rounded-2xl bg-white p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
+                className="feature-card-animate-left w-full sm:w-80 h-60 rounded-2xl bg-linkrow-secondary-bg p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
                 style={{ animation: "fadeInLeft 0.8s ease-out forwards", animationDelay: "0.4s", opacity: 0 }}
               >
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-                  <Lock className="h-6 w-6 text-primary-foreground" />
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linkrow-primary-text">
+                  {/* <Lock className="h-6 w-6 text-primary-foreground" /> */}
+                  <Image 
+                  src="/icons/home_feature_frame-3.svg"
+                  alt="Faster Hiring"
+                  width={24}
+                  height={24}
+                  />
                 </div>
-                <h3 className="mb-2.5 text-xl font-semibold text-foreground">Faster Hiring</h3>
-                <p className="leading-relaxed text-muted-foreground">
+                <h3 className="mb-2.5 text-xl font-semibold text-linkrow-primary-text">Faster Hiring</h3>
+                <p className="leading-relaxed text-linkrow-badge-text">
                   Streamlined processes that cut hiring time by 30% for faster results.
                 </p>
               </div>
 
               {/* Bottom Right - Effortless Integration */}
               <div
-                className="feature-card-animate-right w-full sm:w-80 h-60 rounded-2xl bg-white p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
+                className="feature-card-animate-right w-full sm:w-80 h-60 rounded-2xl bg-linkrow-secondary-bg p-4 shadow-lg transition-all duration-700 hover:shadow-xl lg:p-6"
                 style={{ animation: "fadeInRight 0.8s ease-out forwards", animationDelay: "0.6s", opacity: 0 }}
               >
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-                  <Settings className="h-6 w-6 text-primary-foreground" />
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-linkrow-primary-text">
+                  {/* <Settings className="h-6 w-6 text-primary-foreground" /> */}
+                  <Image 
+                  src="/icons/home_feature_frame-4.svg"
+                  alt="Effortless Integration"
+                  width={24}
+                  height={24}
+                  />
                 </div>
-                <h3 className="mb-2.5 text-xl font-semibold text-foreground">Effortless Integration</h3>
-                <p className="leading-relaxed text-muted-foreground">
+                <h3 className="mb-2.5 text-xl font-semibold text-linkrow-primary-text">Effortless Integration</h3>
+                <p className="leading-relaxed text-linkrow-badge-text">
                   Seamlessly integrate our platform with your existing HR tools for a hiring experience.
                 </p>
               </div>
