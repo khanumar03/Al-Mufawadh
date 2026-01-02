@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { TeamSection } from "@/components/section/about-page/team-section"
 import { WhyChooseUsSection } from "@/components/section/about-page/why-us"
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -71,7 +72,8 @@ export default function CompanyPage() {
   return (
     <main>
       {/* Who We Are Section */}
-      <section className="min-h-[45vh] flex items-center justify-center bg-[#f0f0f0] py-20">
+      <section className="min-h-[45vh] flex items-center justify-center bg-[#f7f7f7] py-20">
+        <BackgroundRippleEffect />
         <motion.div
           className="mx-auto max-w-[1400px] px-8 text-center lg:px-16 xl:px-20"
           variants={containerVariants}
@@ -83,11 +85,11 @@ export default function CompanyPage() {
             {/* <BadgePill text="About us" /> */}
             <Badge
                 asChild
-                className="text-linkrow-badge-text bg-linkrow-badge-bg"
+                className="bg-linkrow-badge-bg"
               >
                 <Link href="#">
                   {" "}
-                  <span className="text-linkrow-primary-text"> About us </span>
+                  <span className="text-linkrow-badge-text"> About us </span>
                 </Link>
               </Badge>
           </motion.div>
@@ -96,7 +98,7 @@ export default function CompanyPage() {
             Who we are
           </motion.h1>
 
-          <motion.p className="text-lg text-gray-600 max-w-2xl mx-auto" variants={fadeInUp}>
+          <motion.p className="text-lg text-linkrow-badge-text max-w-2xl mx-auto" variants={fadeInUp}>
             Building stronger teams and empowering businesses through tailored recruitment solutions and expert talent
             acquisition
           </motion.p>
@@ -117,7 +119,7 @@ export default function CompanyPage() {
               {/* <BadgePill text="Awards" /> */}
               <Badge
                 asChild
-                className="text-linkrow-badge-text bg-linkrow-badge-bg"
+                className="bg-linkrow-badge-bg"
               >
                 <Link href="#">
                   {" "}
@@ -129,17 +131,17 @@ export default function CompanyPage() {
                 Recognized excellence in recruitment services
               </h2>
 
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-linkrow-badge-text text-base leading-relaxed">
                 Our dedication to connecting businesses with top talent has earned us industry recognition. Explore the
                 awards that showcase our commitment to quality and innovation.
               </p>
 
-              <Button className="bg-[#1F514C] hover:bg-[#1a4d4c] text-white rounded-full px-8 py-6 text-base font-medium inline-flex items-center gap-2">
+              <Button className="bg-linkrow-primary-text hover:bg-linkrow-primary-text text-linkrow-secondary-bg rounded-full px-8 py-6 text-base font-medium inline-flex items-center gap-2">
                 Discover our awards
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" strokeWidth="2" />
                   <path strokeWidth="2" d="M12 8v8m4-4H8" />
-                </svg>
+                </svg> */}
               </Button>
 
               {/* Stats */}
@@ -149,8 +151,8 @@ export default function CompanyPage() {
                   animate={awardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.2, ease: EASING.smooth }}
                 >
-                  <div className="text-4xl font-bold text-[#1F514C]">25+</div>
-                  <p className="text-gray-600 text-sm mt-2">prestigious awards received</p>
+                  <div className="text-8xl font-medium text-linkrow-primary-text">25+</div>
+                  <p className="text-linkrow-badge-text text-sm mt-2">prestigious awards received</p>
                 </motion.div>
 
                 <motion.div
@@ -159,12 +161,12 @@ export default function CompanyPage() {
                   transition={{ duration: 0.6, delay: 0.3, ease: EASING.smooth
                    }}
                 >
-                  <div className="text-4xl font-bold text-[#1F514C]">10+</div>
-                  <p className="text-gray-600 text-sm mt-2">years of proven success</p>
+                  <div className="text-8xl font-medium text-linkrow-primary-text">10+</div>
+                  <p className="text-linkrow-badge-text text-sm mt-2">years of proven success</p>
                 </motion.div>
               </div>
             </motion.div>
-
+            
             {/* Right Content - Image */}
             <motion.div
               className="relative"

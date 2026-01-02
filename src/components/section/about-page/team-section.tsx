@@ -43,9 +43,9 @@ function TeamMember({
       </motion.div>
 
       <div className="space-y-2">
-        <h3 className="text-lg md:text-xl font-semibold text-[#1F514C]">{name}</h3>
-        <p className="text-sm md:text-base text-gray-600">{role}</p>
-        <div className="h-1 w-16 bg-[#1F514C]"></div>
+        <h3 className="text-lg md:text-xl font-semibold text-linkrow-primary-text">{name}</h3>
+        <p className="text-sm md:text-base text-linkrow-badge-text">{role}</p>
+        <div className="h-1 w-16 bg-linkrow-primary-text"></div>
       </div>
     </motion.div>
   )
@@ -53,7 +53,7 @@ function TeamMember({
 
 export function TeamSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-linkrow-secondary-bg">
         <div className="mx-auto max-w-[1400px] px-8 lg:px-16 xl:px-20">
           <motion.div
             className="text-center mb-16"
@@ -64,7 +64,7 @@ export function TeamSection() {
           >
             <Badge
                 asChild
-                className="text-linkrow-badge-text bg-linkrow-badge-bg"
+                className="bg-linkrow-badge-bg"
               >
                 <Link href="#">
                   {" "}
@@ -77,13 +77,16 @@ export function TeamSection() {
               <span className="block">your recruitment success</span>
             </h2>
 
-            <Button className="bg-[#1F514C] hover:bg-[#1a4d4c] text-white rounded-full px-8 py-3 text-base font-medium inline-flex items-center gap-2 mt-8">
+            <motion.button className="bg-linkrow-primary-text hover:bg-linkrow-primary-text text-linkrow-secondary-bg rounded-full px-8 py-4 text-base font-medium inline-flex items-center gap-2"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
               View all team
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {/* <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" strokeWidth="2" />
                 <path strokeWidth="2" d="M12 8v8m4-4H8" />
-              </svg>
-            </Button>
+              </svg> */}
+            </motion.button>
           </motion.div>
 
           {/* Team Members Grid */}
