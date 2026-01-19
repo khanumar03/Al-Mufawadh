@@ -1,68 +1,135 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { HERO_ANIMATION } from "@/lib/animation-config"
+import { cn } from "@/lib/utils"
+import React, { useEffect, useState } from "react"
 
-const LOGO_ANIMATION = {
-  duration: 0.7,
-  stagger: 0.08,
-  delay: 0.1, // Start after hero animations complete
-  initialScale: 1.4,
-  finalScale: 1,
-}
+const companies = [
+  {
+    logo: "/partners/partner-1.png",
+  },
+  {
+    logo: "/partners/partner-2.png",
+  },
+  {
+    logo: "/partners/partner-3.png",
+  },
+  {
+    logo: "/partners/partner-4.png",
+  },
+  {
+    logo: "/partners/partner-5.png",
+  },
+  {
+    logo: "/partners/partner-6.png",
+  },
+  {
+    logo: "/partners/partner-7.png",
+  },
+  {
+    logo: "/partners/partner-8.png",
+  },
+  {
+    logo: "/partners/partner-9.png",
+  },
+  {
+    logo: "/partners/partner-10.png",
+  },
+  {
+    logo: "/partners/partner-11.png",
+  },
+  {
+    logo: "/partners/partner-12.png",
+  },
+]
 
-export function PartnerLogos() {
-  const logos = [
-    { id: 1, name: "Logoipsum 1" },
-    { id: 2, name: "Logoipsum 2" },
-    { id: 3, name: "Logoipsum 3" },
-    { id: 4, name: "Logoipsum 4" },
-    { id: 5, name: "Logoipsum 5" },
-    { id: 6, name: "Logoipsum 6" },
-  ]
+export default function PartnerLogos() {
+  const containerRef = React.useRef<HTMLDivElement>(null)
+  const scrollerRef = React.useRef<HTMLDivElement>(null)
+  const [start, setStart] = useState(false)
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: LOGO_ANIMATION.stagger,
-        delayChildren: LOGO_ANIMATION.delay,
-      },
-    },
+  useEffect(() => {
+    addAnimation()
+  }, [])
+
+  function addAnimation() {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children)
+
+      // Clone each item to create seamless loop
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true)
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem)
+        }
+      })
+
+      getDirection()
+      getSpeed()
+      setStart(true)
+    }
   }
 
-  const logoVariants = {
-    hidden: {
-      scale: LOGO_ANIMATION.initialScale,
-      opacity: 0,
-    },
-    visible: {
-      scale: LOGO_ANIMATION.finalScale,
-      opacity: 1,
-      transition: {
-        duration: LOGO_ANIMATION.duration,
-        ease: HERO_ANIMATION.easing,
-      },
-    },
+  const getDirection = () => {
+    if (containerRef.current) {
+      containerRef.current.style.setProperty(
+        "--animation-direction",
+        "forwards"
+      )
+    }
+  }
+
+  const getSpeed = () => {
+    if (containerRef.current) {
+      containerRef.current.style.setProperty("--animation-duration", "30s")
+    }
   }
 
   return (
-    <section className="border-t border-border bg-background py-12">
-      <div className="mx-auto max-w-[1400px] px-8 lg:px-16 xl:px-20">
-        <motion.div
-          className="grid grid-cols-2 items-center gap-8 md:grid-cols-3 lg:grid-cols-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+    <div className="border-t border-border relative w-full overflow-hidden bg-background py-1.5">
+      <div
+        ref={containerRef}
+        className={cn(
+          "scroller relative z-20 mx-auto max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
+        )}
+      >
+        <div
+          ref={scrollerRef}
+          className={cn(
+            "flex w-max min-w-full shrink-0 flex-nowrap gap-16 py-4",
+            start && "animate-scroll",
+            "hover:[animation-play-state:paused]"
+          )}
         >
-          {logos.map((logo) => (
-            <motion.div key={logo.id} className="flex items-center justify-center" variants={logoVariants}>
-              <div className="text-center text-lg font-medium text-muted-foreground/60">Logoipsum</div>
-            </motion.div>
+          {companies.map((company, idx) => (
+            <div
+              key={idx}
+              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+            >
+              <img
+                src={company.logo || "/placeholder.svg"}
+                alt={`logo`}
+                className="h-20 w-32 object-contain"
+              />
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </section>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll var(--animation-duration, 30s)
+            var(--animation-direction, forwards) linear infinite;
+        }
+      `}</style>
+    </div>
   )
 }

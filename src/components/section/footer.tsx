@@ -89,12 +89,14 @@ export function FooterSection() {
           {/* Contact Us */}
           <div>
             <h4 className="mb-6 text-lg font-bold text-linkrow-primary-text">Contact Us</h4>
-            <address className="not-italic text-base leading-relaxed text-linkrow-badge-text">
-              Al Mufawadh Placements and services, 691, Irani Bldg, Entire First Floor, 2<sup>nd</sup> Cross Lane Near
-              Byculla Railway Station, N.M Joshi Marg, Byculla (West), Mum - 400027, Maharashtra, INDIA
-              Tel - 999999999999999
+            <address className="not-italic text-base leading-relaxed text-linkrow-badge-text ">
+              Al Mufawadh Placements and services, 691, Irani Bldg, NM Joshi Marg, 2<sup>nd</sup> X Road, Byculla (W), Mum - 400027, INDIA
               <br />
-              Email - almufawadh.com
+              Tel - +91 22 23007630 
+              <br />
+              Mob: +91 99207 37630
+              <br />
+              Email - info@almufawadhplacement.com
             </address>
           </div>
         </div>

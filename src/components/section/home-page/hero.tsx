@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { HERO_ANIMATION } from "@/lib/animation-config"
 import Link from "next/link"
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
+import MiddleEastMap from "@/components/ui/MiddleEastMap"
 
 export function AnimatedHero() {
   const prefersReducedMotion = useReducedMotion()
@@ -97,7 +98,12 @@ export function AnimatedHero() {
 
   return (
     <section ref={containerRef} className="relative overflow-hidden bg-background">
-      <BackgroundRippleEffect />
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div className="h-full w-full">
+          <MiddleEastMap />
+        </div>
+      </div>
+      {/* <BackgroundRippleEffect /> */}
       {/* Decorative background elements */}
       <div className="absolute right-0 top-0 h-[600px] w-[800px] bg-gradient-to-bl from-muted/40 to-transparent"></div>
 
@@ -156,6 +162,9 @@ export function AnimatedHero() {
               variants={ctaContainerVariants}
               initial="hidden"
               animate="visible"
+              // whileHover={{scale: 1.05, y: -2}}
+              // whileTap={{scale: 0.9, y: 1}}
+              // transition={}
             >
               <motion.div variants={ctaItemVariants} style={{ willChange: "transform, opacity" }}>
                 <Button
