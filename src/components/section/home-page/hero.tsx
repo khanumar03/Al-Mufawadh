@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button"
 import { HERO_ANIMATION } from "@/lib/animation-config"
 import Link from "next/link"
-import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 import MiddleEastMap from "@/components/ui/MiddleEastMap"
 
 export function AnimatedHero() {
@@ -98,7 +97,7 @@ export function AnimatedHero() {
 
   return (
     <section ref={containerRef} className="relative overflow-hidden bg-background">
-      <div className="absolute inset-0 z-0 opacity-20">
+      <div className="absolute inset-0 z-0 opacity-40">
         <div className="h-full w-full">
           <MiddleEastMap />
         </div>
@@ -189,11 +188,9 @@ export function AnimatedHero() {
           </div>
 
           {/* Right Content - Specialist Card */}
-          <div className="flex items-center justify-center lg:justify-end">
+          {/* <div className="flex items-center justify-center lg:justify-end">
             <div className="relative w-full max-w-[580px]">
-              {/* Container for layered cards */}
               <div className="relative flex items-center">
-                {/* Background card - Dark teal with stats (slides in from right, slightly earlier) */}
                 <motion.div
                   className="relative z-3 h-[340px] w-full max-w-[420px] rounded-[28px] bg-primary p-8 text-primary-foreground shadow-xl lg:h-[360px] lg:p-10"
                   variants={backgroundCardVariants}
@@ -211,7 +208,6 @@ export function AnimatedHero() {
                   </p>
                 </motion.div>
 
-                {/* Foreground card - Specialist photo (slides from right with scale, slightly later for parallax) */}
                 <motion.div
                   className="absolute right-0 top-1/2 z-10 w-[280px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-[28px] bg-muted shadow-2xl lg:w-[320px]"
                   variants={specialistCardVariants}
@@ -224,7 +220,7 @@ export function AnimatedHero() {
                   }}
                   style={{ willChange: "transform, opacity" }}
                 >
-                  {/* Top badge */}
+                
                   <motion.div
                     className="absolute left-5 top-5 z-20 rounded-full bg-white px-4 py-2 text-xs font-medium text-foreground shadow-lg lg:text-sm"
                     initial={{ opacity: 0, y: -10 }}
@@ -238,7 +234,7 @@ export function AnimatedHero() {
                     Top rated specialist
                   </motion.div>
 
-                  {/* Specialist image */}
+                
                   <div className="relative h-[400px] w-full lg:h-[440px]">
                     <Image
                       src="/specialist_image.png"
@@ -249,7 +245,7 @@ export function AnimatedHero() {
                     />
                   </div>
 
-                  {/* Bottom info overlay */}
+                
                   <motion.div
                     className="absolute bottom-6 left-5 right-5 rounded-2xl bg-white/95 p-4 shadow-lg backdrop-blur-sm"
                     initial={{ opacity: 0, y: 20 }}
@@ -266,7 +262,7 @@ export function AnimatedHero() {
                 </motion.div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

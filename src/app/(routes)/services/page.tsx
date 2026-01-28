@@ -5,7 +5,7 @@ import MiddleEastMap from "@/components/ui/MiddleEastMap"
 export default function ServicesPage() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      {/* <h1 className="text-4xl font-bold">Services Page</h1> */}
+      <h1 className="text-4xl font-bold">Services Page</h1>
       <MiddleEastMap />
     </div>
   )
