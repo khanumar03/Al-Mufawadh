@@ -98,8 +98,8 @@ export function AnimatedHero() {
   return (
     <section ref={containerRef} className="relative overflow-hidden bg-background">
       <div className="absolute inset-0 z-0 opacity-40">
-        <div className="h-full w-full">
-          <MiddleEastMap />
+        <div className="h-full blur-[2.5px] w-full">
+            <MiddleEastMap />
         </div>
       </div>
       {/* <BackgroundRippleEffect /> */}
@@ -110,27 +110,6 @@ export function AnimatedHero() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-0">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
-            {/* Badge */}
-            <motion.div
-              initial={getAnimation({ opacity: 0, x: -40 })}
-              animate={getAnimation({ opacity: 1, x: 0 })}
-              transition={{
-                duration: 0.6,
-                delay: 0,
-                ease: HERO_ANIMATION.easing,
-              }}
-            >
-              <Badge
-                asChild
-                className="px-3 py-1 text-sm rounded-2xl font-medium text-linkrow-badge-text bg-linkrow-badge-bg"
-              >
-                <Link href="#">
-                  {" "}
-                  <span className="text-linkrow-primary-text">250+</span>trusted
-                  partners
-                </Link>
-              </Badge>
-            </motion.div>
 
             {/* Headline - slides from left */}
             <motion.h1
@@ -152,7 +131,7 @@ export function AnimatedHero() {
               animate="visible"
               style={{ willChange: "transform, opacity" }}
             >
-              <span className="text-linkrow-primary-text font-medium">Al Mufawadh Offers Incredible Placement Service Globally, </span>Approved by Government Of India, Ministry Of Labour. Strongly believe in a new beginning, fresh thinking, innovative ideas and value added services.
+              {/* <span className="text-linkrow-primary-text font-medium">Al Mufawadh Offers Incredible Placement Service Globally, </span>Approved by Government Of India, Ministry Of Labour. Strongly believe in a new beginning, fresh thinking, innovative ideas and value added services. */}
             </motion.p>
 
             {/* CTAs - staggered fade up */}

@@ -7,10 +7,10 @@ export default function MiddleEastMap() {
   const svgRef = useRef<SVGSVGElement>(null);
 
   const pins = [
-    { lat: 20.5937, lng: 78.9629, label: "India", color: "#0a2b28" },
-    { lat: 23.8859, lng: 45.0792, label: "Saudi Arabia", color: "#0a2b28" },
-    { lat: 29.3117, lng: 47.4818, label: "Kuwait", color: "#0a2b28" },
-    { lat: 23.4241, lng: 53.8478, label: "UAE", color: "#0a2b28" },
+    { lat: 20.5937, lng: 78.9629, label: "India", color: "teal" },
+    { lat: 23.8859, lng: 45.0792, label: "Saudi Arabia", color: "teal" },
+    { lat: 29.3117, lng: 47.4818, label: "Kuwait", color: "teal" },
+    { lat: 23.4241, lng: 53.8478, label: "UAE", color: "teal" },
   ];
   
   const { mapInstance, svgString } = useMemo(() => {

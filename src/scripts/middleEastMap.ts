@@ -1,6 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const { getMapJSON } = require("dotted-map");
+import fs from "fs";
+import path from "path";
+
+import { getMapJSON } from "dotted-map";
 
 const mapJson = getMapJSON({
   height: 90,
@@ -9,15 +10,9 @@ const mapJson = getMapJSON({
     lat: { min: 8, max: 42 },
     lng: { min: 25, max: 62 },
   },
-  avoidOuterPins: true,
 });
 
-const outputPath = path.join(
-  process.cwd(),
-  "src",
-  "lib",
-  "middleEastMap.json"
-);
+const outputPath = path.join(process.cwd(), "src", "lib", "middleEastMap.json");
 
 fs.writeFileSync(outputPath, JSON.stringify(mapJson));
 

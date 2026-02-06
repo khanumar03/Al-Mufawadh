@@ -76,14 +76,6 @@ export function FeaturesSection() {
     <section className="relative overflow-hidden bg-linkrow-section-bg py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-16 xl:px-20">
         <div className="mb-16 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={badgeVariants}
-          >
-            <Badge className="px-3 py-1 text-sm rounded-2xl font-medium text-linkrow-primary-text bg-linkrow-badge-bg">About Us</Badge>
-          </motion.div>
 
           <motion.h2
             className="mx-auto mb-6 max-w-4xl text-4xl text-linkrow-primary-text font-medium leading-tight tracking-tight lg:text-5xl"
