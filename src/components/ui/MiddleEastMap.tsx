@@ -26,8 +26,8 @@ export default function MiddleEastMap() {
     return { mapInstance: map, svgString: svg };
   }, []);
 
-  const width = (mapInstance as any).image.width;
-  const height = (mapInstance as any).image.height;
+  const width = (mapInstance as DottedMap).image.width;
+  const height = (mapInstance as DottedMap).image.height;
 
   return (
     <div className="w-full max-w-7xl mx-auto relative">
